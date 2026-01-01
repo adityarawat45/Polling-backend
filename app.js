@@ -10,6 +10,8 @@ app.use(cors())
 app.use(express.json());
 app.listen(3000)
 
+//Initializing project
+
 console.log("Port we are getting : ", process.env.PORT)
 
 
