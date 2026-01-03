@@ -1,23 +1,16 @@
 import { Server } from "socket.io";
-
-let io;
+import registerVoteHandlers from "../controllers/vote/vote.socket.js";
 
 export default function initSocket(server) {
-  io = new Server(server, {
+  const io = new Server(server, {
     cors: {
       origin: "*"
     }
   });
 
   io.on("connection", (socket) => {
-    console.log("Socket connected:", socket.id);
-
-    socket.on("disconnect", () => {
-      console.log("Socket disconnected:", socket.id);
-    });
+    registerVoteHandlers(io, socket);
   });
 
   return io;
 }
-
-export { io };
