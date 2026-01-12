@@ -1,6 +1,9 @@
 import express from "express";
 import {pollRouter}  from "./controllers/poll/pollRouter.js";
 const app = express();
+import cors from "cors"
+
+app.use(cors())
 
 
 app.use(express.json());
