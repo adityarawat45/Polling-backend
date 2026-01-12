@@ -18,7 +18,7 @@ app.get("/health", (req, res) => {
   });
 });
 
-app.use("/poll",  pollRouter);
+app.use("/api/polls",  pollRouter);
 
 
 export default app;
